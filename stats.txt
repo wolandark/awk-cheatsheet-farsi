@@ -1,0 +1,5 @@
+Days    SSH Users    Offline    Idle Users    FTP Users
+Sat 	-231          53         12            3
+Sun	 	-874          13         84	 	      9
+Mon	 	837	   	     339        44            34
+etc ...
