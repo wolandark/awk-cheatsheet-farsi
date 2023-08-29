@@ -1,8 +1,7 @@
-<h1><center>awk تک خطی‌های</center></h1>
-
-<div dir="rtl"><h1>
-awk چیست ؟
-</h1></div>
+<div align="center" style="display: inline_block">
+  <h1 style="text-align: center;">awk تک خطی‌های</h1>
+	<h1>آک چیست؟</h1>
+</div>
 	
 <div dir="rtl">
 Awk یک ابزار پردازش متنی چندمنظوره است که برای پردازش و تحلیل
@@ -63,7 +62,12 @@ awk '/Port/' /etc/ssh/sshd_config
 <div dir="rtl">
 در این جزوه که در واقع برگ تقلبی برای آک و کاربردهای بیشمار آن است، ما بر روش سوم تمرکز خواهیم کرد.
 </div>
-
+<h2>نکته</h2>
+<div dir="rtl">
+آک بصورت کلی روی ستون‌های متنی کار می‌کند، این ستون‌ها فیلد (field) نامیده می‌شوند.
+	
+کلمات، رجکس و ترتیب کاراکترها در این جزوه الگو (pattern) نامیده می‌شوند.
+</div>
 <div dir="rtl"><h1>فرمت کردن پاراگراف</h1></div>
 <div dir="rtl"><div dir="rtl"><h4> اضافه کردن یک خط فاصله بین هر بند:</div></div>
 ‍
@@ -485,14 +489,15 @@ awk '/./' dummy.txt
 ```
 <hr>
 
-<div dir="rtl"> <center>
+<div align="center" style="display: inline_block">
+
 تنظیم، ترجمه و گردآوری از Woland
 
 
 کانال تلگرام: https://t.me/volandarkside
 
 ایمیل: contact-woland@proton.me
-</center></div>
+</div>
 <hr>
 
 - Sources:
