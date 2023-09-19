@@ -62,7 +62,7 @@ awk '/Port/' /etc/ssh/sshd_config
 <div dir="rtl">
 در این جزوه که در واقع برگ تقلبی برای آک و کاربردهای بیشمار آن است، ما بر روش سوم تمرکز خواهیم کرد.
 </div>
-<h2>نکته</h2>
+
 <div dir="rtl">
 آک بصورت کلی روی ستون‌های متنی کار می‌کند، این ستون‌ها فیلد (field) نامیده می‌شوند.
 	
@@ -71,12 +71,10 @@ awk '/Port/' /etc/ssh/sshd_config
 <div dir="rtl"><h1>فرمت کردن پاراگراف</h1></div>
 <div dir="rtl"><div dir="rtl"><h4> اضافه کردن یک خط فاصله بین هر بند:</div></div>
 ‍
-
 ```
 awk '1;{print ""}' dummy.txt
 awk 'BEGIN{ORS="\n\n"};1' dummy.txt
 ```
-
 
 <div dir="rtl"><h4> اضافه کردن سه خط فاصله بین هر بند:</div>
 
@@ -107,7 +105,6 @@ awk '{print FNR "\t" $0}' dummy.txt*
 awk '{printf("%5d : %s\n", NR,$0)}' dummy.txt
 ```
 
-
 <div dir="rtl"><h4> اضافه کردن شماره‌ی خطوط به شرط خالی نبودن خطوط :</div>
  
 ```
@@ -115,13 +112,11 @@ awk 'NF{$0=++a " :" $0};{print}' dummy.txt
 awk '{print (NF? ++a " :" :"") $0}' dummy.txt
 ```
 
-
 <div dir="rtl"><h4> شمارش خطوط یک فایل مانند wc -l:</div>
 
 ```
 awk 'END{print NR}' dummy.txt
 ```
-
 
 <div dir="rtl"><h4> انجام عمیات ریاضی جمع بر روی تمام فیلدهای عددی یک فایل بصورت جداگانه:</div>
 <div dir="rtl"><small>مناسب فایل‌های آماری </small></div>
