@@ -74,8 +74,6 @@ awk '/Port/' /etc/ssh/sshd_config
 
 ```
 awk '1;{print ""}' dummy.txt
-```
-```
 awk 'BEGIN{ORS="\n\n"};1' dummy.txt
 ```
 
@@ -93,9 +91,8 @@ awk '1;{print ""}' dummy.txt
 <div dir="rtl"><small>یعنی چنانچه بعد از dummy.txt فایل دیگری هم به آک بدهید، هنگامی که شمارش به فایل دوم برسد  دوباره از یک شروع به شمردن می‌کند.</small></div>
 
 ```
- awk '{print FNR "\t" $0}' dummy.txt*
- ```
-
+awk '{print FNR "\t" $0}' dummy.txt*
+```
 
 <div dir="rtl"><h4> اضافه کردن شماره‌ی خطوط به متن و شمارش پیوسته‌ی خطوط تمام فایل‌ها:</div>
 
@@ -113,10 +110,8 @@ awk '{printf("%5d : %s\n", NR,$0)}' dummy.txt
 
 <div dir="rtl"><h4> اضافه کردن شماره‌ی خطوط به شرط خالی نبودن خطوط :</div>
  
- ```
+```
 awk 'NF{$0=++a " :" $0};{print}' dummy.txt
-```
-```
 awk '{print (NF? ++a " :" :"") $0}' dummy.txt
 ```
 
@@ -159,8 +154,6 @@ awk '{for (i=1; i<=NF; i++) s=s+$i}; END{print s}' stats.txt
 
 ```
 awk '{for (i=1; i<=NF; i++) if ($i < 0) $i = -$i; print }'
-```
-```
 awk '{for (i=1; i<=NF; i++) $i = ($i < 0) ? -$i : $i; print }'
 ```
 
@@ -231,7 +224,6 @@ awk 'NF > 4' dummy.txt
 awk '{sub(/^[ \t]+/, ""); print}' dummy.txt 
 ```
 
-
 <div dir="rtl"><h4> حذف فضاهای سفید انتهایی (فاصله‌ها، تب‌ها) از انتهای هر خط:</div>
 
 ```
@@ -243,7 +235,9 @@ awk '{sub(/[ \t]+$/, "");print}'
 ```
 awk '{gsub(/^[ \t]+|[ \t]+$/,"");print}' dummy.txt
 ```
+
 <div dir="rtl">این دستور فاصله‌ی اضافی بین فیلد‌ها را هم حذف می‌کند</div>
+
 
 ```
 awk '{$1=$1;print}' dummy.txt
@@ -279,7 +273,6 @@ awk '{sub(/Lorem/,"foo");print}' dummy.txt
 awk '{sub(/Lorem/,"foo");print}' dummy.txt | grep --color=always foo
 ```
 
-
 <div dir="rtl"><h4> یافتن و جایگزینی، تنها در خطوطی که شامل یک الگوی  خاص هستند:</div>
 <div dir="rtl"><small> در این دستور خطوطی که شامل الگوی Lorem هستند هدف‌گیری می‌شوند و در آن خطوط، الگوی ipsum با foo جایگزین خواهند شد. </small></div>
 
@@ -289,13 +282,13 @@ awk '/Lorem/{gsub(/ipsum/, "foo")};{print}' dummy.txt
 
 <div dir="rtl"><h4> یافتن و جایگزینی در تمام خطوطی که شامل یک الگوی  خاص نیستند (عکس دستور قبل):</div>
  
- ```
+```
 awk '!/Lorem/{gsub(/sit/, "foo")};{print}' dummy.txt
 ```
 
 <div dir="rtl"><h4> جایگزینی گروهی  واژگان با الگویی خاص:</div>
  
- ```
+```
 awk '{gsub(/Lorem|ipsum|dolor/, "foo"); print}' dummy.txt
 ```
 
@@ -351,19 +344,15 @@ awk 'a !~ $0; {a=$0}'
 
 ```
 awk '! a[$0]++'                
-```
-```
 awk '!($0 in a) {a[$0];print}'      
 ```
 
 <div dir="rtl"><h1> نمایش انتخابی برخی از خطوط:</h1></div>
-
 <div dir="rtl"><h4> نمایش ۱۰خط  اول از فایل (شبیه‌سازی عملکرد head):</div>
 
 ```
 awk 'NR < 11'
 ```
-
 
 <div dir="rtl"><h4> نمایش اولین خط از فایل (شبیه‌سازی head -1):</div>
 
@@ -371,13 +360,11 @@ awk 'NR < 11'
 awk 'NR>1{exit};1'
 ```
 
-
 <div dir="rtl"><h4> نمایش دو خط آخر یک فایل (شبیه‌سازی tail -2):</div>
 
 ```
 awk '{y=x "\n" $0; x=$0};END{print y}' dummy.txt
 ```
-
 
 <div dir="rtl"><h4> نمایش آخرین خط یک فایل (شبیه‌ازی "tail -1):</div>
 
@@ -385,13 +372,11 @@ awk '{y=x "\n" $0; x=$0};END{print y}' dummy.txt
 awk 'END{print}' dummy.txt
 ```
 
-
 <div dir="rtl"><h4> نمایش تنها خطوطی که با الگو تطابق دارند (شبیه‌سازی grep):</div>
 
 ```
 awk '/Lorem/' dummy.txt
 ```
-
 
 <div dir="rtl"><h4> نمایش تنها خطوطی که با الگو تطابق ندارند (شبیه‌سازی grep -v):</div>
 
@@ -399,16 +384,12 @@ awk '/Lorem/' dummy.txt
 awk '!/Lorem/' dummy.txt
 ```
 
-
 <div dir="rtl"><h4> نمایش خط قبل از یک الگو، اما خط حاوی الگو را نمایش نمی‌دهد:</div>
 
 ```
 awk '/Lorem/{print x};{x=$0}' dummy.txt
-```
-```
 awk '/Lorem/{print (x=="" ? "تطابق در خط 1" : x)};{x=$0}'  dummy.txt
 ```
-
 
 <div dir="rtl"><h4> نمایش خط پس از یک الگو، اما خط حاوی الگو را نمایش نمی‌دهد:</div>
 
@@ -416,13 +397,11 @@ awk '/Lorem/{print (x=="" ? "تطابق در خط 1" : x)};{x=$0}'  dummy.txt
 awk '/Lorem/{getline;print}' dummy.txt
 ```
 
-
 <div dir="rtl"><h4> گرفتن AAA و BBB و CCC (به هر ترتیب):</div>
 
 ```
 awk '/AAA/; /BBB/; /CCC/' dummy.txt
 ```
-
 
 <div dir="rtl"><h4> گرفتن AAA و BBB و CCC (به همان ترتیب):</div>
 
@@ -430,13 +409,11 @@ awk '/AAA/; /BBB/; /CCC/' dummy.txt
 awk '/AAA.*BBB.*CCC/' dummy.txt
 ```
 
-
 <div dir="rtl"><h4> نمایش تنها خطوطی با طول ۶۵ کاراکتر یا بیشتر:</div>
 
 ```
 awk 'length > 64' dummy.txt
 ```
-
 
 <div dir="rtl"><h4> نمایش تنها خطوطی با طول کمتر از ۶۵ کاراکتر:</div>
 
@@ -444,16 +421,12 @@ awk 'length > 64' dummy.txt
 awk 'length < 64' dummy.txt
 ```
 
-
 <div dir="rtl"><h4> نمایش بخشی از فایل از الگو تا انتهای فایل:</div>
 
 ```
 awk '/Lorem/,0' dummy.txt
-```
-```
 awk '/Lorem/,EOF' dummy.txt
 ```
-
 
 <div dir="rtl"><h4> نمایش بخشی از فایل بر اساس شماره‌های خط (خطوط ۸-۱۲):</div>
 
@@ -461,13 +434,10 @@ awk '/Lorem/,EOF' dummy.txt
 awk 'NR==8,NR==12' dummy.txt
 ```
 
-
 <div dir="rtl"><h4> نمایش شماره خط ۵۲:</div>
 
 ```
 awk 'NR==52' dummy.txt
-```
-```
 awk 'NR==52 {print;exit}' dummy.txt
    در فایل‌های بزرگ بهتر عمل می‌کند
 ```
@@ -483,8 +453,6 @@ awk '/Iowa/,/Montana/' dummy.txt
 
 ```
 awk NF dummy.txt
-```
-```
 awk '/./' dummy.txt
 ```
 <hr>
