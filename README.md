@@ -451,13 +451,10 @@ awk '/./' dummy.txt
 
 <hr>
 
-<div align="center" style="display: inline_block">
-
-تنظیم، ترجمه و گردآوری از Woland
+<div align="center">
 <br>
-کانال تلگرام: https://t.me/volandarkside
+<a href="https://t.me/volandarkside"> Telegram Channel</a>
 <br>
-ایمیل: contact-woland@proton.me
 </div>
 <hr>
 
