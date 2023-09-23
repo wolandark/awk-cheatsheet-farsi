@@ -126,9 +126,9 @@ awk 'END{print NR}' dummy.txt
 
 ```
 Days    SSH Users    Offline    Idle Users    FTP Users
-Sat	231          53         12            435
-Sun	874          13         84	      9
-Mon	837	     339        44            34
+Sat	231           53          12             435
+Sun	874           13          84	       9
+Mon	837	      339        44              34
 etc ...
 ```
 
