@@ -1,3 +1,9 @@
+<div align="right">
+<a href="http://www.coffeete.ir/wolandark">
+       <img src="http://www.coffeete.ir/images/buttons/lemonchiffon.png" style="width:260px;" />
+</a>
+</div>
+<br>
 <div align="center">
   <h1 style="text-align: center;">awk تک خطی‌های</h1>
 	<h1>آک چیست؟</h1>
@@ -126,9 +132,9 @@ awk 'END{print NR}' dummy.txt
 
 ```
 Days    SSH Users    Offline    Idle Users    FTP Users
-Sat	231           53          12             435
-Sun	874           13          84	       9
-Mon	837	      339        44              34
+Sat	231           53          12              435
+Sun	874           13          84	         9
+Mon	837	      339         44              34
 etc ...
 ```
 
@@ -448,10 +454,9 @@ awk '/./' dummy.txt
 <div align="center" style="display: inline_block">
 
 تنظیم، ترجمه و گردآوری از Woland
-
-
+<br>
 کانال تلگرام: https://t.me/volandarkside
-
+<br>
 ایمیل: contact-woland@proton.me
 </div>
 <hr>
@@ -464,3 +469,7 @@ awk '/./' dummy.txt
     Hayden Books, 1987
   - Effective awk Programming, 3rd Edition. by Arnold Robbins
   O'Reilly, 2001
+
+# Contact me
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/wolandarkside)
+[![Protonmail](https://img.shields.io/badge/ProtonMail-8B89CC?style=for-the-badge&logo=protonmail&logoColor=white)](mailto:contact-woland@proton.me)
