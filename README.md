@@ -130,13 +130,12 @@ awk 'END{print NR}' dummy.txt
 
 <div dir="rtl"> برای مثال فایلی با محتوای زیر:</div>
 
-```
-Days    SSH Users    Offline    Idle Users    FTP Users
-Sat	231           53          12              435
-Sun	874           13          84	         9
-Mon	837	      339         44              34
-etc ...
-```
+<pre>
+| Days | SSH Users | Offline | Idle Users | FTP Users
+| Sat  | 231        | 53       | 12           | 435       
+| Sun  | 874        | 13       | 849          | 56        
+| Mon  | 837        | 339      | 4434         | 90        
+</pre>
 
 [دانلود این فایل](https://gist.github.com/wolandark/ec6400930e24be6823a8e55c27d84978)
 
